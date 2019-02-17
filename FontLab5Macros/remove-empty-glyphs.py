@@ -1,19 +1,14 @@
 #FLM: Remove empty glyphs
 # Removes all empty glyphs from a font
 
-glyphsToKeep = []
-glyphs = fl.font.glyphs
-for glyph in glyphs:
-	if glyph.nodes or glyph.components:
-		glyphsToKeep.append(glyph)
+font = fl.font
+glyphs = font.glyphs
+namesToKeep = [ '.notdef', 'NULL', 'CR', 'space' ]
 
-removeCount = len(glyphs) - len(glyphsToKeep)
-if removeCount == 0:
-	print "No empty glyphs to remove."
-else:
-	glyphs.clean()
-	for glyph in glyphsToKeep:
-		glyphs.append(glyph)
-	print "Removed " + str(removeCount) + " empty glyphs."
+# Find all the empty glyphs
+for glyph in reversed(glyphs):
+	if not glyph.nodes and not glyph.components:
+		if not glyph.name in namesToKeep:
+			del glyphs[font.FindGlyph(glyph.name)]
 
 fl.UpdateFont()
