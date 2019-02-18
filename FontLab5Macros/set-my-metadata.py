@@ -5,14 +5,30 @@ import os
 font = fl.font
 
 # Base name on filename
-fontname = os.path.basename(os.path.splitext(font.file_name)[0])
+fontName = os.path.basename(os.path.splitext(font.file_name)[0]).strip()
+isBold = fontName.endswith(" Bold")
+if isBold:
+    familyName = fontName[0:-5]
+    styleName = "Bold"
+    font.font_style = 32
+    font.weight = "Bold"
+    font.weight_code = 700
+else:
+    familyName = fontName
+    styleName = "Normal"
+    font.font_style = 0
+    font.weight = "Regular"
+    font.weight_code = 400
+
+fullName = familyName + " " + styleName
 
 # Set all standard names
-font.family_name = fontname
-font.font_name = fontname.replace(' ','') + "-" + font.style_name
-font.full_name = fontname + " " + font.style_name
-font.menu_name = fontname
-font.apple_name = fontname
+font.family_name = familyName
+font.style_name = styleName
+font.font_name = familyName.replace(' ','') + "-" + styleName
+font.full_name = fullName
+font.menu_name = familyName
+font.apple_name = fullName
 
 # Personalized creator info
 font.designer = "Damien Guard"
@@ -23,9 +39,9 @@ font.vendor = "ENVY"
 font.vendor_url = "https://envytech.com"
 
 # Set OpenType & TrueType data
-font.pref_family_name = fontname
-font.pref_style_name = font.style_name
-font.mac_compatible = font.full_name
-font.tt_u_id = font.designer.replace(' ','') + ": " + font.full_name + ": " + str(font.year)
+font.pref_family_name = familyName
+font.pref_style_name = styleName
+font.mac_compatible = fullName
+font.tt_u_id = font.designer.replace(' ','') + ": " + fullName + ": " + str(font.year)
 
 fl.UpdateFont()
