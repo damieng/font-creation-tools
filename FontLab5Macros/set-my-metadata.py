@@ -15,7 +15,7 @@ if isBold:
     font.weight_code = 700
 else:
     familyName = fontName
-    styleName = "Normal"
+    styleName = "Regular"
     font.font_style = 0
     font.weight = "Regular"
     font.weight_code = 400
@@ -28,7 +28,7 @@ font.style_name = styleName
 font.font_name = familyName.replace(' ','') + "-" + styleName
 font.full_name = fullName
 font.menu_name = familyName
-font.apple_name = fullName
+font.apple_name = fullName if isBold else familyName
 
 # Personalized creator info
 font.designer = "Damien Guard"
