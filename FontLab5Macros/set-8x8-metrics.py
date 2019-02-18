@@ -1,4 +1,4 @@
-#FLM: Set 8x8 metrics
+#FLM: Set 8x8 monospace metrics
 # Set the metrics for nice 8x8 pixel fonts at 8px on Windows
 
 font = fl.font
@@ -29,5 +29,8 @@ font.default_width[0] = width
 font.underline_position = font.descender[0]
 font.underline_thickness = pixel_size_y
 font.is_fixed_pitch = 1
+
+for glyph in fl.font.glyphs:
+    glyph.width = width
 
 fl.UpdateFont()
