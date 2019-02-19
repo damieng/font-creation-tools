@@ -317,6 +317,20 @@ class NodeMenuCommands:
     ConnectionSharp             = 40140
     Properties                  = 40151
 
+class FontWindowMenuCommands:
+    Names                       = 33690
+    UnicodeRanges               = 33691
+    Codepages                   = 33692
+    GlyphIndex                  = 33693
+
+class FontToolbarCommands:
+    FontInfo                    = 33001    
+    Names                       = 33208
+    UnicodeRanges               = 32974
+    Codepages                   = 33060
+    GlyphIndex                  = 33209
+    SaveEncoding                = 33176
+
 class CurveMenuCommands:
     Cancel                      = 40500
     InsertNode                  = 40152
@@ -413,6 +427,26 @@ class PreviewMenuCommands:
     MetricsMode                 = 32948
     KerningMode                 = 32949
     GenerateKernFeature         = 33934
+
+class PreviewOptionsCommands:
+    Underline                   = 33720
+    Strikethrough               = 33959
+    Panel                       = 33526
+    Table                       = 33666
+    Ruler                       = 33721
+    AutomaticLineFeed           = 34075
+    FlipGlyphs                  = 33804
+    MeasurementLine             = 33554
+    ClassKerning                = 34039
+    ClassKerningWithExceptions  = 34040
+    ClassKerningInKeyPairsOnly  = 34041
+    IndividualPairKerning       = 34043
+
+class MorphMenuCommands:
+    OriginalPosition            = 33743
+    SetDestination              = 33746
+    RepeatLastLink              = 33745
+    RemoveLink                  = 33744
 
 class BitmapToolMenuCommands:
     Cancel                      = 40500
