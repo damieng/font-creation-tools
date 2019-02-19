@@ -9,4 +9,4 @@ for glyph in fl.font.glyphs:
             audit_note += str(audit.position) + " " + audit.description + "\r\n\r\n"                
     glyph.note = audit_note
 
-fl.updateFont()
+fl.UpdateFont()
