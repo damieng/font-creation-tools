@@ -2,6 +2,10 @@
 
 Various simple tools and scripts for making fonts.
 
+## FontLab/CodePages
+
+- [fontlab/codepages/cpm-plus-amstrad-sinclair.cpg] CP/M+ codepage for Amstrad & Sinclair Spectrum +3 machines
+
 ## FontLab5Macros
 
 Copy these into your FontLab 5 Macros folder - e.g. `%userprofile%/Documents/FontLab/Studio 5/Macros` and restart FontLab Studio to see them listed in the Macros drop-down.
