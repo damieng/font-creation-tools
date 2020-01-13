@@ -7,32 +7,39 @@ font = fl.font
 # Base name on filename
 fontName = os.path.basename(os.path.splitext(font.file_name)[0]).strip()
 nameParts = fontName.split()
-isBold = True if "Bold" in nameParts else False
-isItalic = True if "Italic" in nameParts else False
 
 styleNames = []
 font.font_style = 0
 font.weight = "Regular"
 font.weight_code = 400
 
-if isBold:
+if "Bold" in nameParts:
     styleNames.append("Bold")
     nameParts.remove("Bold")
     font.font_style += 32
     font.weight = "Bold"
     font.weight_code = 700
 
-if isItalic:
+if "SemiBold" in nameParts:
+    styleNames.append("SemiBold")
+    nameParts.remove("SemiBold")
+    font.font_style += 32
+    font.weight = "SemiBold"
+    font.weight_code = 600
+
+if "Italic" in nameParts:
     styleNames.append("Italic")
     nameParts.remove("Italic")
     font.font_style += 1
 
+familyName = " ".join(nameParts)
+appleName = familyName
 if styleNames:
     styleName = " ".join(styleNames)
+    appleName += " " + styleName
 else:
     styleName = "Regular"
 
-familyName = " ".join(nameParts)
 fullName = familyName + " " + styleName
 
 # Set all standard names
@@ -41,7 +48,7 @@ font.style_name = styleName
 font.font_name = familyName.replace(' ', '') + "-" + styleName.replace(' ', '')
 font.full_name = fullName
 font.menu_name = familyName
-font.apple_name = fullName if isBold or isItalic else familyName
+font.apple_name = appleName
 
 # Personalized creator info
 font.designer = "Damien Guard"
