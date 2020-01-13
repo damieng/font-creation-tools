@@ -4,7 +4,7 @@ Various simple tools and scripts for making fonts.
 
 ## FontLab/CodePages
 
-- [fontlab/codepages/cpm-plus-amstrad-sinclair.cpg] CP/M+ codepage for Amstrad & Sinclair Spectrum +3 machines
+- [fontlab/codepages/cpm-plus-amstrad-sinclair.cpg](CP/M+ codepage for Amstrad & Sinclair Spectrum +3 machines)
 
 ## FontLab5Macros
 
